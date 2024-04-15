@@ -4,7 +4,7 @@ using System.Data;
 
 namespace Infra.DataBase.InMemory.Context
 {
-    public class MySqlContext : IMySqlAdapter
+    public class MySqlContext : IDBConnnectionAdapter
     {
         public MySqlContext() { }
 

@@ -5,10 +5,7 @@ namespace Infra.DataBase.InMemory.Repositories
 {
     public class ClubRepository : IClubAdapter
     {
-        public ClubRepository()
-        {
-
-        }
+        public ClubRepository() { }
 
         public Task<IEnumerable<Club>> GetAll()
         {

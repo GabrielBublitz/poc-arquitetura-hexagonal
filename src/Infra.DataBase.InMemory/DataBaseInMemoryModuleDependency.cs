@@ -10,7 +10,7 @@ namespace Infra.DataBase.InMemory
         public static void AddDataBaseInMemoryModule(this IServiceCollection services)
         {
             services.AddScoped<IClubAdapter, ClubRepository>();
-            services.AddTransient<IMySqlAdapter, MySqlContext>();
+            services.AddTransient<IDBConnnectionAdapter, MySqlContext>();
         }
     }
 }

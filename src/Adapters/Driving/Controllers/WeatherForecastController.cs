@@ -6,7 +6,7 @@ namespace Domain.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController(ILogger<WeatherForecastController> logger, IMySqlAdapter mySqlAdapter) : ControllerBase
+    public class WeatherForecastController(ILogger<WeatherForecastController> logger, IDBConnnectionAdapter dBConnnection) : ControllerBase
     {
         private static readonly string[] Summaries =
         [
@@ -14,7 +14,7 @@ namespace Domain.Controllers
         ];
 
         private readonly ILogger<WeatherForecastController> Logger = logger;
-        private readonly IMySqlAdapter MySqlAdapter = mySqlAdapter;
+        private readonly IDBConnnectionAdapter dBConnnection = dBConnnection;
 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
@@ -31,7 +31,7 @@ namespace Domain.Controllers
         [HttpGet("db/check")]
         public IEnumerable<int> GetDBConnection()
         {
-            using var connection = MySqlAdapter.GetNewConnection();
+            using var connection = dBConnnection.GetNewConnection();
 
             var a = connection.Query<int>("SELECT 1 AS result");
 

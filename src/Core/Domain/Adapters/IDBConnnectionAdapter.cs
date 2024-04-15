@@ -2,7 +2,7 @@
 
 namespace Domain.Adapters
 {
-    public interface IMySqlAdapter
+    public interface IDBConnnectionAdapter
     {
         public IDbConnection GetNewConnection();
     }
