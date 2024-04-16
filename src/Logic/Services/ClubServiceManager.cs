@@ -1,8 +1,8 @@
-﻿using Domain.Adapters;
-using Domain.Entities;
-using Domain.Services;
+﻿using Api.Adapters;
+using Api.Entities;
+using Api.Services;
 
-namespace Application
+namespace Logic
 {
     public class ClubServiceManager(IClubAdapter clubRepository, IEmailAdapter emailAdapter) : IClubService
     {

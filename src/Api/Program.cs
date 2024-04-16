@@ -1,9 +1,8 @@
-
-using Application;
-using Infra.Email;
 using Infra.DataBase.InMemory;
+using Infra.Email;
+using Logic;
 
-namespace Domain
+namespace Api
 {
     public class Program
     {
@@ -42,9 +41,9 @@ namespace Domain
 
         private static void SetupApplicationModules(WebApplicationBuilder builder)
         {
-            builder.Services.AddDataBaseInMemoryModule();
+            builder.Services.AddDataBaseModule();
             builder.Services.AddEmailModule();
-            builder.Services.AddApplicationModule();
+            builder.Services.AddLogicModule();
         }
     }
 }

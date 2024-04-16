@@ -1,5 +1,5 @@
-﻿using Domain.Adapters;
-using Domain.Entities;
+﻿using Api.Adapters;
+using Api.Entities;
 
 namespace Infra.DataBase.InMemory.Repositories
 {

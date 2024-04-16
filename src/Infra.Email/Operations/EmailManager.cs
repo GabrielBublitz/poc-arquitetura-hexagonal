@@ -1,4 +1,4 @@
-﻿using Domain.Adapters;
+﻿using Api.Adapters;
 
 namespace Infra.Email.Operations
 {

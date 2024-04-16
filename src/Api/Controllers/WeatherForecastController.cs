@@ -1,8 +1,8 @@
 using Dapper;
-using Domain.Adapters;
+using Api.Adapters;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Domain.Controllers
+namespace Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

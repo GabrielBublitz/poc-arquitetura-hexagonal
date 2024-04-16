@@ -1,7 +1,7 @@
 ﻿
-using Domain.Entities;
+using Api.Entities;
 
-namespace Domain.Adapters
+namespace Api.Adapters
 {
     public interface IClubAdapter
     {

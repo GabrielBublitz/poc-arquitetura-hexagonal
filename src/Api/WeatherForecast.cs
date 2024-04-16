@@ -1,4 +1,4 @@
-namespace Domain
+namespace Api
 {
     public class WeatherForecast
     {

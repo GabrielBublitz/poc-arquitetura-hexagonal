@@ -1,4 +1,4 @@
-﻿namespace Domain.Entities
+﻿namespace Api.Entities
 {
     public class Club
     {
