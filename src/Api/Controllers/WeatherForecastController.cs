@@ -1,12 +1,10 @@
-using Dapper;
-using Api.Adapters;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController(ILogger<WeatherForecastController> logger, IDBConnnectionAdapter dBConnnection) : ControllerBase
+    [ApiController]
+    public class WeatherForecastController(ILogger<WeatherForecastController> logger) : ControllerBase
     {
         private static readonly string[] Summaries =
         [
@@ -14,7 +12,6 @@ namespace Api.Controllers
         ];
 
         private readonly ILogger<WeatherForecastController> Logger = logger;
-        private readonly IDBConnnectionAdapter dBConnnection = dBConnnection;
 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
@@ -26,16 +23,6 @@ namespace Api.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
-        }
-
-        [HttpGet("db/check")]
-        public IEnumerable<int> GetDBConnection()
-        {
-            using var connection = dBConnnection.GetNewConnection();
-
-            var a = connection.Query<int>("SELECT 1 AS result");
-
-            return a;
         }
     }
 }
