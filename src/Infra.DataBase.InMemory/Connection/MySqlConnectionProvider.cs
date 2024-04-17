@@ -2,11 +2,11 @@
 using MySql.Data.MySqlClient;
 using System.Data;
 
-namespace Infra.DataBase.InMemory.Context
+namespace Infra.DataBase.InMemory.Connection
 {
-    public class MySqlContext : IDBConnnectionAdapter
+    public class MySqlConnectionProvider : IDBConnnectionProvider
     {
-        public MySqlContext() { }
+        public MySqlConnectionProvider() { }
 
         public IDbConnection GetNewConnection()
         {
