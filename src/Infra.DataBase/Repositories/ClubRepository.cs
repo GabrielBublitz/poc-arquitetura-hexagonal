@@ -1,7 +1,7 @@
-﻿using Api.Adapters;
-using Api.Entities;
+﻿using Domain.Adapters;
+using Domain.Entities;
 
-namespace Infra.DataBase.InMemory.Repositories
+namespace Infra.DataBase.Repositories
 {
     public class ClubRepository : IClubAdapter
     {

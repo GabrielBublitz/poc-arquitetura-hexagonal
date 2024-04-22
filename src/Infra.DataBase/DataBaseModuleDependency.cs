@@ -1,13 +1,13 @@
-﻿using Api.Adapters;
+﻿using Domain.Adapters;
 using Domain.Adapters.DataBse;
 using Domain.Entities;
-using Infra.DataBase.InMemory.Connection;
-using Infra.DataBase.InMemory.Repositories;
+using Infra.DataBase.Connection;
+using Infra.DataBase.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Infra.DataBase.InMemory
+namespace Infra.DataBase
 {
-    public static class DataBaseInMemoryModuleDependency
+    public static class DataBaseModuleDependency
     {
         public static void AddDataBaseModule(this IServiceCollection services)
         {

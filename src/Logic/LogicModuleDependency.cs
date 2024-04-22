@@ -1,4 +1,4 @@
-﻿using Api.Services;
+﻿using Domain.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Logic

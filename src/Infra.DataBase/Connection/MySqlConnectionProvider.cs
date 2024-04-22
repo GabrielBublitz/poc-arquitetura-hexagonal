@@ -1,8 +1,8 @@
-﻿using Api.Adapters;
+﻿using Domain.Adapters;
 using MySql.Data.MySqlClient;
 using System.Data;
 
-namespace Infra.DataBase.InMemory.Connection
+namespace Infra.DataBase.Connection
 {
     public class MySqlConnectionProvider : IDBConnnectionProvider
     {

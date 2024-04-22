@@ -1,4 +1,4 @@
-﻿namespace Api.Adapters
+﻿namespace Domain.Adapters
 {
     public interface IEmailAdapter
     {

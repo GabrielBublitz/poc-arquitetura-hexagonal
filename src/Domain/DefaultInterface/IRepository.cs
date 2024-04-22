@@ -1,4 +1,4 @@
-﻿namespace Api.DefaultInterface
+﻿namespace Domain.DefaultInterface
 {
     public interface IRepository
     {

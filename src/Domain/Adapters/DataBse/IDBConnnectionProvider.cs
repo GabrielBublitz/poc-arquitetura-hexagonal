@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace Api.Adapters
+namespace Domain.Adapters
 {
     public interface IDBConnnectionProvider
     {

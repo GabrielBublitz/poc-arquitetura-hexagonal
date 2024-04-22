@@ -1,4 +1,4 @@
-﻿namespace Api.Services
+﻿namespace Domain.Services
 {
     public interface IClubService
     {

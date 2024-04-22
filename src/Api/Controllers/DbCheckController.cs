@@ -1,4 +1,4 @@
-﻿using Api.Adapters;
+﻿using Domain.Adapters;
 using Dapper;
 using Domain.Adapters.DataBse;
 using Microsoft.AspNetCore.Mvc;

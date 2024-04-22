@@ -1,4 +1,4 @@
-﻿using Api.Adapters;
+﻿using Domain.Adapters;
 using Infra.Email.Operations;
 using Microsoft.Extensions.DependencyInjection;
 

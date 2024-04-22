@@ -1,6 +1,6 @@
-﻿using Api.Adapters;
-using Api.Entities;
-using Api.Services;
+﻿using Domain.Adapters;
+using Domain.Entities;
+using Domain.Services;
 
 namespace Logic
 {
