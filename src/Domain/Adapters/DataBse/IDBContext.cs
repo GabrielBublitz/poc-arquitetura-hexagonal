@@ -1,11 +1,11 @@
-﻿using System.Data;
-
-namespace Domain.Adapters.DataBse
+﻿namespace Domain.Adapters.DataBse
 {
     public interface IDBContext : IDisposable
     {
-        IDbConnection? Connection { get; }
+        void Commit();
 
-        IDbTransaction? Transaction { get; }
+        void RollBack();
+
+        void NewTransaction();
     }
 }

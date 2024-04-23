@@ -1,14 +1,34 @@
 ﻿using Domain.Adapters.DataBse;
-using System.Data;
+using System.Data.Common;
 
 namespace Domain.Entities
 {
-    public class DBContext() : IDBContext
+    public class DBContext(DbConnection connection) : IDBContext
     {
-        public IDbTransaction? Transaction { get; set; }
+        public DbConnection Connection = connection;
 
-        public IDbConnection? Connection { get; set; }
+        public DbTransaction? Transaction;
 
-        public void Dispose() => Connection?.Dispose();
+        public void Dispose()
+        {
+            Connection?.Dispose();
+        }
+
+        public void Commit()
+        {
+            Transaction?.Commit();
+        }
+
+        public void RollBack()
+        {
+            Transaction?.Rollback();
+        }
+
+        public void NewTransaction()
+        {
+            Connection.Open();
+
+            Transaction = Connection.BeginTransaction();
+        }
     }
 }

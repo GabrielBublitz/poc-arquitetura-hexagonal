@@ -1,9 +1,9 @@
-﻿using System.Data;
+﻿using System.Data.Common;
 
 namespace Domain.Adapters
 {
     public interface IDBConnnectionProvider
     {
-        IDbConnection GetNewConnection();
+        DbConnection GetNewConnection();
     }
 }
