@@ -1,6 +1,7 @@
 using Infra.DataBase;
 using Infra.Email;
 using Logic;
+using Logic.CommandHandler;
 
 namespace Api
 {
@@ -44,6 +45,10 @@ namespace Api
             builder.Services.AddDataBaseModule();
             builder.Services.AddEmailModule();
             builder.Services.AddLogicModule();
+            builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(
+                typeof(Program).Assembly, 
+                typeof(GetDataBaseStatusCommandHandler).Assembly)
+            );
         }
     }
 }
