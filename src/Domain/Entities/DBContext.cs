@@ -5,9 +5,9 @@ namespace Domain.Entities
 {
     public class DBContext(DbConnection connection) : IDBContext
     {
-        public DbConnection Connection = connection;
+        public DbConnection Connection { get; private set; } = connection;
 
-        public DbTransaction? Transaction;
+        public DbTransaction? Transaction { get; private set; }
 
         public void Dispose()
         {

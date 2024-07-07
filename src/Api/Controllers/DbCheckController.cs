@@ -7,18 +7,18 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DbCheckController(IDBConnnectionProvider dBConnectionProvider, IDBContext dbContext) : ControllerBase
+    public class DbCheckController(IDBConnnectionProvider dBConnectionProvider, IDBContextFactory dBContextFactory) : ControllerBase
     {
         private readonly IDBConnnectionProvider DBConnectionProvider = dBConnectionProvider;
 
-        private readonly IDBContext DBContext = dbContext;
+        private readonly IDBContextFactory DBContextFactory = dBContextFactory;
 
         [HttpGet]
         public IEnumerable<int> GetDBConnection()
         {
-            using var dbConnection = DBConnectionProvider.GetNewConnection();
+            using var DBContext = DBContextFactory.CreateContext(DBConnectionProvider.GetNewConnection());
 
-            var response = dbConnection.Query<int>("SELECT 1 AS result");
+            var response = DBContext.Connection.Query<int>("SELECT 1 AS result");
             return response;
         }
     }

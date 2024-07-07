@@ -1,7 +1,7 @@
 ﻿using Domain.Adapters;
 using Domain.Adapters.DataBse;
-using Domain.Entities;
 using Infra.DataBase.Connection;
+using Infra.DataBase.Factories;
 using Infra.DataBase.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,8 +12,8 @@ namespace Infra.DataBase
         public static void AddDataBaseModule(this IServiceCollection services)
         {
             services.AddScoped<IClubAdapter, ClubRepository>();
-            services.AddTransient<IDBConnnectionProvider, MySqlConnectionProvider>();
-            services.AddScoped<IDBContext, DBContext>();
+            services.AddScoped<IDBConnnectionProvider, MySqlConnectionProvider>();
+            services.AddScoped<IDBContextFactory, DBContextFactory>();
         }
     }
 }
