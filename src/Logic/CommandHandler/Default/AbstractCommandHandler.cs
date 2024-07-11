@@ -9,11 +9,11 @@ namespace Logic.CommandHandler.Default
 
         protected IDBContextFactory DBContextFactory { get; private set; } = DBContextFactory;
 
-        protected IDBConnnectionProvider DBConnectionFactory { get; private set; } = DBConnectionFactory;
+        protected IDBConnnectionProvider DBConnectionProvider { get; private set; } = DBConnectionFactory;
 
         public void NewContext()
         {
-            DBContext = DBContextFactory.CreateContext(DBConnectionFactory.GetNewConnection());
+            DBContext = DBContextFactory.CreateContext(DBConnectionProvider.GetConnection());
         }
     }
 }

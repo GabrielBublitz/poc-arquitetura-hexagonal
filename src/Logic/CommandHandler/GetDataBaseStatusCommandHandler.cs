@@ -6,12 +6,9 @@ using MediatR;
 
 namespace Logic.CommandHandler
 {
-    public class GetDataBaseStatusCommandHandler : AbstractCommandHandler, IRequestHandler<GetDataBaseStatusCommand, IList<int>>
+    public class GetDataBaseStatusCommandHandler(IDBConnnectionProvider DBConnectionFactory, IDBContextFactory DBContextFactory) 
+        : AbstractCommandHandler(DBConnectionFactory, DBContextFactory), IRequestHandler<GetDataBaseStatusCommand, IList<int>>
     {
-        public GetDataBaseStatusCommandHandler(IDBConnnectionProvider DBConnectionFactory, IDBContextFactory DBContextFactory)
-            : base(DBConnectionFactory, DBContextFactory)
-        { }
-
         public Task<IList<int>> Handle(GetDataBaseStatusCommand request, CancellationToken cancellationToken)
         {
             NewContext();

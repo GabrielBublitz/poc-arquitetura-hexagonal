@@ -6,11 +6,16 @@ namespace Infra.DataBase.Connection
 {
     public class MySqlConnectionProvider : IDBConnnectionProvider
     {
-        public MySqlConnectionProvider() { }
+        public DbConnection DbConnection { get; }
 
-        public DbConnection GetNewConnection()
+        public MySqlConnectionProvider(string connectionString)
         {
-            return new MySqlConnection("Server=127.0.0.1;Port=3306;Database=qestudos;Uid=root;Pwd=123456;");
+            DbConnection = new MySqlConnection(connectionString);
+        }
+
+        public DbConnection GetConnection()
+        {
+            return DbConnection;
         }
     }
 }

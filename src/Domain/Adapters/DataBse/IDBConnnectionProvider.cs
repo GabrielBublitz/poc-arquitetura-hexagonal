@@ -4,6 +4,8 @@ namespace Domain.Adapters
 {
     public interface IDBConnnectionProvider
     {
-        DbConnection GetNewConnection();
+        DbConnection DbConnection { get; }
+
+        DbConnection GetConnection();
     }
 }

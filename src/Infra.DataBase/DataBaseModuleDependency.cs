@@ -9,10 +9,10 @@ namespace Infra.DataBase
 {
     public static class DataBaseModuleDependency
     {
-        public static void AddDataBaseModule(this IServiceCollection services)
+        public static void AddDataBaseModule(this IServiceCollection services, string connecTionString)
         {
             services.AddScoped<IClubAdapter, ClubRepository>();
-            services.AddScoped<IDBConnnectionProvider, MySqlConnectionProvider>();
+            services.AddScoped<IDBConnnectionProvider>(provider => new MySqlConnectionProvider(connecTionString));
             services.AddScoped<IDBContextFactory, DBContextFactory>();
         }
     }
